@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/recentsListFragment">
+    app:startDestination="@id/startFragment">
 
     <fragment
         android:id="@+id/contactsListFragment"
@@ -28,4 +28,16 @@
         android:name="com.example.contactsapp.ContactFragment"
         android:label="fragment_contact"
         tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.contactsapp.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/navigateToContactsFragment"
+            app:destination="@id/contactsListFragment" />
+        <action
+            android:id="@+id/navigateToRecentsFragment"
+            app:destination="@id/recentsListFragment" />
+    </fragment>
 </navigation>
