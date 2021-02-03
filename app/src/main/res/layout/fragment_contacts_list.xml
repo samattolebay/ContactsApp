@@ -7,9 +7,21 @@
     android:padding="5dp"
     tools:context=".ContactsListFragment">
 
+    <ImageView
+        android:id="@+id/ivSearchContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search_contact"
+        app:layout_constraintBottom_toBottomOf="@id/etSearchContact"
+        app:layout_constraintEnd_toStartOf="@id/etSearchContact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="15dp"
+        android:contentDescription="@string/search_contact" />
+
     <EditText
-        android:id="@+id/etFindContact"
-        android:layout_width="match_parent"
+        android:id="@+id/etSearchContact"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/contacts"
         android:importantForAutofill="no"
@@ -17,7 +29,7 @@
         app:layout_constraintBottom_toTopOf="@+id/rvContacts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivSearchContact"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -29,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFindContact" />
+        app:layout_constraintTop_toBottomOf="@+id/etSearchContact" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbtnAddContact"
