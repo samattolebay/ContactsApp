@@ -7,8 +7,8 @@
     tools:context=".MainActivity">
 
     <Button
-        style="?attr/borderlessButtonStyle"
         android:id="@+id/btnRecents"
+        style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/recents"
@@ -18,8 +18,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        style="?attr/borderlessButtonStyle"
         android:id="@+id/btnContacts"
+        style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contacts"
@@ -29,13 +29,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fMain"
+        android:id="@+id/fcvNavHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRecents" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRecents"
+        app:navGraph="@navigation/nav_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
