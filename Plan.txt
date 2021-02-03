@@ -1,0 +1,8 @@
+1. Design app layout
+	1.1 App parts:
+		1. Main Activity, 2 Fragments:
+			1. Recent calls
+			2. Contacts list
+		2. 2 Buttons, change fragments
+2. Convert Java code to Kotlin
+3. Write code
