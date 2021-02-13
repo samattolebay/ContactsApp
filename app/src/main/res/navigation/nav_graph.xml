@@ -6,13 +6,31 @@
     app:startDestination="@id/startFragment">
 
     <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.contactsapp.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/FromStartToContacts"
+            app:destination="@id/contactsListFragment" />
+        <action
+            android:id="@+id/FromStartToRecents"
+            app:destination="@id/recentsListFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/contactsListFragment"
         android:name="com.example.contactsapp.ContactsListFragment"
         android:label="fragment_contacts_list"
         tools:layout="@layout/fragment_contacts_list">
         <action
-            android:id="@+id/action_contactsListFragment_to_contactFragment"
+            android:id="@+id/FromContactsToContact"
             app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/FromContactsToOrganization"
+            app:destination="@id/organizationInfoFragment" />
+        <action
+            android:id="@+id/FromContactsToPerson"
+            app:destination="@id/personInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/recentsListFragment"
@@ -20,24 +38,43 @@
         android:label="fragment_recents_list"
         tools:layout="@layout/fragment_recents_list">
         <action
-            android:id="@+id/action_recentsListFragment_to_contactFragment"
+            android:id="@+id/FromRecentsToContact"
             app:destination="@id/contactFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
         android:name="com.example.contactsapp.ContactFragment"
         android:label="fragment_contact"
-        tools:layout="@layout/fragment_contact" />
+        tools:layout="@layout/fragment_contact">
+        <action
+            android:id="@+id/FromContactToPerson"
+            app:destination="@id/personInfoFragment" />
+        <action
+            android:id="@+id/FromContactToOrganization"
+            app:destination="@id/organizationInfoFragment" />
+        <argument
+            android:name="id_contact"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
     <fragment
-        android:id="@+id/startFragment"
-        android:name="com.example.contactsapp.StartFragment"
-        android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
-        <action
-            android:id="@+id/navigateToContactsFragment"
-            app:destination="@id/contactsListFragment" />
-        <action
-            android:id="@+id/navigateToRecentsFragment"
-            app:destination="@id/recentsListFragment" />
+        android:id="@+id/organizationInfoFragment"
+        android:name="com.example.contactsapp.OrganizationInfoFragment"
+        android:label="fragment_organization_info"
+        tools:layout="@layout/fragment_organization_info">
+        <argument
+            android:name="id_contact"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/personInfoFragment"
+        android:name="com.example.contactsapp.PersonInfoFragment"
+        android:label="fragment_person_info"
+        tools:layout="@layout/fragment_person_info">
+        <argument
+            android:name="id_contact"
+            android:defaultValue="-1"
+            app:argType="integer" />
     </fragment>
 </navigation>

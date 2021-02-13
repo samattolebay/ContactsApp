@@ -2,9 +2,6 @@ package com.example.contactsapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.commit
-import androidx.navigation.NavHostController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.contactsapp.databinding.ActivityMainBinding
 
@@ -20,16 +17,16 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fcvNavHostFragment) as NavHostFragment
 
         val navController = navHostFragment.navController
-        navController.navigate(R.id.navigateToRecentsFragment)
+        navController.navigate(R.id.FromStartToRecents)
 
         binding.btnRecents.setOnClickListener {
             navController.popBackStack()
-            navController.navigate(R.id.navigateToRecentsFragment)
+            navController.navigate(R.id.FromStartToRecents)
         }
 
         binding.btnContacts.setOnClickListener {
             navController.popBackStack()
-            navController.navigate(R.id.navigateToContactsFragment)
+            navController.navigate(R.id.FromStartToContacts)
         }
     }
 }

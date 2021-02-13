@@ -10,4 +10,12 @@
     <string name="add_contact">Add Contact</string>
     <string name="contact_photo">Contact Photo</string>
     <string name="search_contact">Search Contact</string>
+    <string name="close">Close</string>
+    <string name="confirm">Confirm</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="number">Number</string>
+    <string name="address">Address</string>
+    <string name="gender">Gender</string>
 </resources>

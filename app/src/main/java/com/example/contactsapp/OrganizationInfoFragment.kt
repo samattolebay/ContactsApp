@@ -5,25 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.EditText
 import androidx.navigation.fragment.navArgs
 
-class ContactFragment : Fragment() {
-    private val args: ContactFragmentArgs by navArgs()
+class OrganizationInfoFragment : Fragment() {
+    private val args: OrganizationInfoFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false)
+        return inflater.inflate(R.layout.fragment_organization_info, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val contact = DataSource.contacts[args.idContact]
-        if (contact != null) {
-            view.findViewById<TextView>(R.id.tvContactFullName).text = contact.getFullName()
-            view.findViewById<TextView>(R.id.tvContactNumber).text = contact.number
-        }
+        val person = DataSource.contacts[args.idContact] as ContactOrganization
+        view.findViewById<EditText>(R.id.etContactName).setText(person.name)
+        view.findViewById<EditText>(R.id.etContactAddress).setText(person.address)
+        view.findViewById<EditText>(R.id.etContactNumber).setText(person.number)
         super.onViewCreated(view, savedInstanceState)
     }
 }
